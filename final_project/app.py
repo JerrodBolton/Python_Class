@@ -22,28 +22,111 @@ def welcome_message():
 def get_a_random_workout_program(exercise_type):
     # Dictionary containing workout exercises for each type
     workouts = {
-        "Arm": [
-            "Push-ups - 3 sets of 15 reps",
-            "Bicep Curls - 3 sets of 12 reps",
-            "Tricep Dips - 3 sets of 15 reps",
-            "Shoulder Press - 3 sets of 12 reps",
-            "Plank to Push-up - 3 sets of 10 reps"
-        ],
-        "Legs": [
-            "Squats - 3 sets of 15 reps",
-            "Lunges - 3 sets of 12 reps each leg",
-            "Calf Raises - 3 sets of 20 reps",
-            "Glute Bridges - 3 sets of 15 reps",
-            "Wall Sit - Hold for 30 seconds, 3 times"
-        ],
-        "Core": [
-            "Crunches - 3 sets of 20 reps",
-            "Leg Raises - 3 sets of 15 reps",
-            "Russian Twists - 3 sets of 20 reps",
-            "Plank - Hold for 1 minute, 3 times",
-            "Bicycle Crunches - 3 sets of 20 reps"
-        ]
-    }
+    "Arm": [
+        "Push-ups - 3 sets of 15 reps",
+        "Incline Push-ups - 3 sets of 12 reps",
+        "Knee Push-ups - 3 sets of 10 reps",
+        "Bicep Curls - 3 sets of 12 reps",
+        "Hammer Curls - 3 sets of 12 reps",
+        "Tricep Dips - 3 sets of 15 reps",
+        "Overhead Tricep Extension - 3 sets of 12 reps",
+        "Shoulder Press - 3 sets of 12 reps",
+        "Lateral Raises - 3 sets of 12 reps",
+        "Arm Circles - 3 sets of 30 seconds"
+    ],
+
+    "Legs": [
+        "Squats - 3 sets of 15 reps",
+        "Jump Squats - 3 sets of 10 reps",
+        "Lunges - 3 sets of 12 reps each leg",
+        "Reverse Lunges - 3 sets of 10 reps each leg",
+        "Step-Ups - 3 sets of 12 reps each leg",
+        "Glute Bridges - 3 sets of 15 reps",
+        "Wall Sit - Hold for 30 seconds, 3 times",
+        "Calf Raises - 3 sets of 20 reps",
+        "Single-Leg Calf Raises - 3 sets of 12 reps each leg",
+        "High Knees - 3 sets of 30 seconds"
+    ],
+
+    "Core": [
+        "Crunches - 3 sets of 20 reps",
+        "Sit-Ups - 3 sets of 15 reps",
+        "Leg Raises - 3 sets of 15 reps",
+        "Flutter Kicks - 3 sets of 20 reps",
+        "Russian Twists - 3 sets of 20 reps",
+        "Bicycle Crunches - 3 sets of 20 reps",
+        "Plank - Hold for 1 minute, 3 times",
+        "Side Plank - Hold for 30 seconds each side",
+        "Mountain Climbers - 3 sets of 30 seconds",
+        "Toe Touches - 3 sets of 20 reps"
+    ],
+
+    "Cardio": [
+        "Jumping Jacks - 3 sets of 30 seconds",
+        "High Knees - 3 sets of 30 seconds",
+        "Butt Kicks - 3 sets of 30 seconds",
+        "Jog in Place - 3 sets of 1 minute",
+        "Burpees - 3 sets of 8 reps",
+        "Skater Jumps - 3 sets of 20 reps",
+        "Jump Rope (Imaginary) - 3 sets of 1 minute",
+        "Mountain Climbers - 3 sets of 30 seconds",
+        "Fast Marching - 3 sets of 1 minute",
+        "Shadow Boxing - 3 sets of 1 minute"
+    ],
+
+    "Full Body": [
+        "Burpees - 3 sets of 10 reps",
+        "Push-up to Squat - 3 sets of 10 reps",
+        "Squat to Press - 3 sets of 12 reps",
+        "Mountain Climbers - 3 sets of 30 seconds",
+        "Bear Crawl - 3 sets of 30 seconds",
+        "Plank Jacks - 3 sets of 20 reps",
+        "Jump Squats - 3 sets of 10 reps",
+        "Dead Bug - 3 sets of 10 reps each side",
+        "Standing Knee Raises - 3 sets of 20 reps",
+        "Lunge to Knee Drive - 3 sets of 10 reps each leg"
+    ],
+
+    "HIIT": [
+        "Jump Squats - 3 sets of 12 reps",
+        "Burpees - 3 sets of 8 reps",
+        "High Knees - 3 sets of 30 seconds",
+        "Mountain Climbers - 3 sets of 30 seconds",
+        "Skater Jumps - 3 sets of 20 reps",
+        "Plank Jacks - 3 sets of 20 reps",
+        "Speed Squats - 3 sets of 15 reps",
+        "Fast Feet Shuffle - 3 sets of 30 seconds",
+        "Jump Lunges - 3 sets of 10 reps",
+        "Power Knees - 3 sets of 20 reps"
+    ],
+
+    "Mobility": [
+        "Arm Swings - 3 sets of 30 seconds",
+        "Hip Circles - 3 sets of 30 seconds",
+        "Torso Twists - 3 sets of 30 seconds",
+        "Cat-Cow Stretch - 3 sets of 10 reps",
+        "World’s Greatest Stretch - Hold for 30 seconds each side",
+        "Neck Rolls - 3 sets of 20 seconds",
+        "Shoulder Rolls - 3 sets of 30 seconds",
+        "Ankle Circles - 3 sets of 30 seconds",
+        "Standing Forward Fold - Hold for 1 minute",
+        "Chest Opener Stretch - Hold for 30 seconds"
+    ],
+
+    "Recovery": [
+        "Light Walking - 5 minutes",
+        "Deep Breathing - 3 minutes",
+        "Child’s Pose - Hold for 1 minute",
+        "Seated Forward Fold - Hold for 1 minute",
+        "Standing Hamstring Stretch - Hold for 30 seconds each leg",
+        "Quad Stretch - Hold for 30 seconds each leg",
+        "Shoulder Stretch - Hold for 30 seconds each arm",
+        "Calf Stretch - Hold for 30 seconds each leg",
+        "Neck Stretch - Hold for 30 seconds each side",
+        "Supine Twist - Hold for 1 minute each side"
+    ]
+}
+
     # Return 3 random exercises from the selected workout type
     return random.sample(workouts[exercise_type], 3)
 
@@ -87,7 +170,12 @@ class WorkoutApp:
             file.write("Generated Workout: " + self.workout_time + "\n")  # Write the date and time
             for exercise in self.workout_program:  # Loop through the workout program
                 file.write(f"- {exercise}\n")  # Write each exercise
-            file.write("\n")  # Add a newline
+            file.write("\n") # Add a newline
+        print("-----------------------------")  # Print a separator
+        print("Workout data saved successfully.")  # Print a success message
+        print(f"Hey {input_name}, your workout data saved to workout_data.txt at: {self.workout_time}")  # Print a confirmation message
+        print("-----------------------------")  # Print a separator
+        
 
     # Method to show the save button after a delay
     def save_button_appear(self):
@@ -95,7 +183,7 @@ class WorkoutApp:
             save_button = ttk.Button(self.root, text="Save Workout", command=self.save_workout_data)  # Create the save button
             save_button.pack(pady=10)  # Add padding around the button
 
-        self.root.after(40000, show_save_button)  # Show the save button after 1 second
+        self.root.after(100000, show_save_button)  # Show the save button after 1 second
 
     # Method to create GUI components
     def create_widgets(self):
@@ -108,7 +196,7 @@ class WorkoutApp:
                 "Choose a workout type below and click 'Generate Workout'.\n"
                 "You will receive a random exercise challenge.\n"
                 "Complete the workout and save your progress to level up!\n" 
-                f"The save button will appear after 40 seconds to log your workout.\n\n"
+                f"The save button will appear after 3 minutes to log your workout.\n\n"
                 "Good luck, and have fun working out!!!!"
                 
             ),
@@ -126,7 +214,11 @@ class WorkoutApp:
 
         # Create a dropdown menu for workout types
         self.workout_type = tk.StringVar()  # Create a StringVar to hold the selected workout type
-        workout_options = ["Arm", "Legs", "Core"]  # Define the workout options
+        workout_options = [
+    "Arm", "Legs", "Core",
+    "Cardio", "Full Body",
+    "HIIT", "Mobility", "Recovery"
+]  # Define the workout options
         self.workout_dropdown = ttk.Combobox(selection_frame, textvariable=self.workout_type, values=workout_options, state="readonly")  # Create the dropdown
         self.workout_dropdown.pack()  # Add the dropdown to the frame
         self.workout_dropdown.current(0)  # Set the default selection to the first option
