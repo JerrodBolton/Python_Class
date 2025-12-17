@@ -95,13 +95,27 @@ class WorkoutApp:
             save_button = ttk.Button(self.root, text="Save Workout", command=self.save_workout_data)  # Create the save button
             save_button.pack(pady=10)  # Add padding around the button
 
-        # Set a timer to show the save button after 40 seconds
-        self.root.after(40000, show_save_button)
+        self.root.after(40000, show_save_button)  # Show the save button after 1 second
 
     # Method to create GUI components
     def create_widgets(self):
         self.root.title("Solo Leveling Workout Generator")  # Set the title of the window
-
+        # Create a description label
+        description_label = ttk.Label(
+            self.root,
+            text=(
+                "Solo Leveling Workout Generator\n\n"
+                "Choose a workout type below and click 'Generate Workout'.\n"
+                "You will receive a random exercise challenge.\n"
+                "Complete the workout and save your progress to level up!\n" 
+                f"The save button will appear after 40 seconds to log your workout.\n\n"
+                "Good luck, and have fun working out!!!!"
+                
+            ),
+            justify="center",
+            wraplength=400
+        )
+        description_label.pack(pady=10) # Add padding around the description label
         # Create a frame for the workout selection
         selection_frame = ttk.Frame(self.root, padding="20")  # Create a frame with padding
         selection_frame.pack()  # Add the frame to the window
